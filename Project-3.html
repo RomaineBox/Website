@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>Romaine's Website</title> 
+ <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+    <!--Add a sandwich icon here-->
+    <div class="sandwich-icon-area">
+        <p onclick="openNav()"> &#9776; <span></span> </p>
+    </div>
+
+    <!--The curtain dropdown menu-->
+    <div id="myNav" class="overlay">
+        <p class="close-icon" onclick="closeNav()"> &times; </p>
+        <div class="overlay-content">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        //When users click on "sandwich icon", open or show the curtain menu layer
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+        //Write the closeNav() method here
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+
+    <!-- NAV BAR -->
+    <nav>
+        <div class="horizontal-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutMe.html" >About Me</a></li>
+                <li><a href="Projects.html" >Projects</a>
+                    <ul class="dropdown">
+                        <li><a href="Project-1.html">Project 1</a></li>
+                        <li><a href="Project-2.html">Project 2</a></li>
+                        <li><a href="Project-3.html">Project 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="Contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div>
+            <h1 class="Project-Three">Project Three</h1>
+        </div>
+    </main>
+
+    <footer> 
+        <div> 
+            <p>Created by Romaine Box<br> ITWD5.130 Website Development Semester Two 2024
+            </p> 
+        </div> 
+    </footer>
+</body>
+</html>

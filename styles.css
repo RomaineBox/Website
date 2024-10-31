@@ -1,0 +1,506 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@font-face {
+    font-family: 'RoyalKnights';
+    src: url("Fonts/Royal_Knights-Demo.ttf");
+}
+@font-face {
+    font-family: 'Championship';
+    src: url("Fonts/Championship.ttf");
+}
+@font-face {
+    font-family: 'Academy';
+    src: url("Fonts/Academy.ttf");
+}
+@font-face {
+    font-family: 'AcademyFilled';
+    src: url("Fonts/AcademyFilled3D.ttf");
+}
+@font-face {
+    font-family: 'Team401';
+    src: url("Fonts/Team\ 401.ttf");
+}
+
+/*Define style for the sandwich icon*/
+.sandwich-icon-area {
+    font-size: 2em;
+    float: none;
+    cursor: pointer;
+    color: aqua;
+    display: none;
+}
+/*Define styles for the curtain menu layer*/
+.overlay {
+    height: 100%;
+    width: 45%;
+    display: none; /*block: show; none: hide*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 50, 60);
+    z-index: 1; /*Make this layer sit on top of other layer*/
+}
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none; /*remove all default styles*/
+    font-size: 3.0em;/*1em=16px => 2em = 32px*/
+    color: aqua;
+    display: block;
+}
+.close-icon {
+    position: absolute;
+    top: 1.0em;
+    right: 1.5em; /*1.5em = 1.5*16px = 24px */
+    font-size: 6.0em;
+    color: aqua;
+    cursor: pointer;
+}
+
+
+/* Changes colour of "active" tab */
+.active {
+    background-color: aqua;
+    color: rgb(0, 50, 60);
+    font-weight: bold;
+}
+
+body {
+    background-color: antiquewhite;
+    background-image: url("Images/MainBG.jpg");
+    background-size: 100% 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    height: 7vh;
+}
+
+nav ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+nav ul li {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+
+    /* Adds dropdown menu */
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: aqua;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    width: 100%;
+}
+
+/* Changes colour on mouse hover */
+nav ul li a:hover:not(.active) {
+    background-color: rgb(0, 0, 0);
+} 
+
+/*Dropdown submenu*/
+.dropdown {
+    background-color: rgb(0, 50, 60);
+    visibility: hidden;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s ease;
+    align-items: center;
+    display: inline-block;
+    z-index: 10;
+}
+
+nav ul li:hover > ul {
+    visibility: visible;
+    display: inline-block;
+    opacity: 1;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    font-size: 20px;
+}
+
+header {
+    height: 20vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    min-height: 83vh;
+    color: aqua;
+    display: flex;
+    justify-content: left;
+    align-items: center; 
+}
+
+.wrapper {
+    display: block;
+}
+
+/* MAIN PAGE -------------------------------------------------------- MAIN PAGE */
+
+.Hello-Romaine {
+    font-size: 30px;
+    padding-left: 50px;
+    animation: fadeIn 3s;
+    display: block;
+}
+
+.Romaine {
+    font-family: Academy;
+    font-size: 200px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    line-height: 90%;
+    animation: fadeIn 1s;
+    display: block;
+}
+
+.Under-Romaine {
+    font-size: 30px;
+    padding-left: 80px;
+    top: 420px;
+    animation: fadeIn 5s;
+    display: block;
+}
+
+/* ABOUT ME PAGE -------------------------------------------------------- ABOUT ME PAGE */
+
+.About-Me {
+    font-family: Academy;
+    font-size: 150px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 430px;
+    left: 200px;
+    animation: fadeIn 1s;
+}
+
+.Above-About-Me {
+    font-size: 20px;
+    left: 50px;
+    box-sizing: content-box;
+    width: 800px;
+    position: absolute;
+    top: 200px
+}
+
+.Fade-In-Text {
+    font-family: Arial;
+    font-size: 60px;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* PROJECT PAGE -------------------------------------------------------- PROJECT PAGE */
+
+/* Change colour of hyperlinks and remove formatting */
+a {
+    color: aqua;
+    text-decoration: none;
+}
+
+.Proj-1 {
+    font-family: Academy;
+    font-size: 100px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    animation: fadeIn 2s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.Project-One, .Project-Two, .Project-Three {
+    font-family: Academy;
+    font-size: 100px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 250px;
+    left: 475px;
+}
+
+.Proj-2 {
+    font-family: Academy;
+    font-size: 100px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    animation: fadeIn 5s;
+    cursor: pointer;
+}
+
+
+.Proj-3 {
+    font-family: Academy;
+    font-size: 100px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 450px;
+    left: 0px;
+    animation: fadeIn 7s;
+    cursor: pointer;
+}
+
+.Proj1-preview, .Proj2-preview, .Proj3-preview {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 750px;
+    width: 700px;
+    height: 500px;
+    border-radius: 30%;
+    z-index: 9;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none; 
+}
+
+/* The image inside the preview */
+.Proj1-preview img, .Proj2-preview img, .Proj3-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border: 2px solid red;
+}
+
+
+.show-preview {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* CONTACT PAGE ------------------------------------------------------------------------- CONTACT PAGE */
+
+.Lets-Talk {
+    font-family: Academy;
+    font-size: 100px;
+    top: 250px;
+    left: 500px;
+    font-weight: lighter;
+    position: absolute;
+    animation: fadeIn 1s;
+    
+}
+
+.email-input {
+    text-align: center;
+    width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    top: 350px;
+    left: 530px;
+    position: absolute;
+    animation: fadeIn 3s;
+}
+
+.submit-btn {
+    width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    top: 400px;
+    left: 680px;
+    position: absolute;
+    animation: fadeIn 5s;
+}
+
+.submit-btn:hover {
+    background-color: rgb(0, 50, 60);
+    color: aqua;
+}
+/* FOOTER -------------------------------------------------------------------------- FOOTER*/
+footer {
+    height: 10vh;;
+    color: aqua;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* FOR SMALL DEVICES --------------------------------------------------------------- FOR SMALLER DEVICES */
+
+@media screen and (max-width: 426px) {
+
+    .sandwich-icon-area {
+        display: block; /* Show burger menu on mobile */
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    body {
+        font-size: 14px; /* Scale down general font size */
+        padding: 10px;
+    }
+
+    /* MAIN LANDING ----------------------------------------------------------------------- MAIN LANDING */
+    .Romaine {
+        font-size: 90px;
+    }
+    .Under-Romaine {
+        font-size: 20px;
+    }
+    
+    /* ABOUT ME ---------------------------------------------------------------------------- ABOUT ME */
+    .About-Me {
+        font-size: 80px;
+        position: absolute;
+        left: auto;
+        top: 80px;
+    }
+    .Above-About-Me {
+        width: 400px;
+        justify-self: left;
+        left: 10px;
+        font-size: 15px;
+    }
+
+    /* PROJECT PAGE ----------------------------------------------------------------------- PROJECT PAGE */
+    .Proj-1, .Proj-2, .Proj-3 {
+        font-size: 50px; /* Scale project titles for mobile */
+    }
+
+    a {
+        color: aqua;
+        text-decoration: none;
+    }
+
+    .Proj1-preview img, .Proj2-preview img, .Proj3-preview img {
+        display: none;
+    }
+    
+    .Proj1-preview, .Proj2-preview, .Proj3-preview {
+        display: none;
+    }
+
+
+    /* CONTACT PAGE ----------------------------------------------------------------------- CONTACT PAGE */
+    .Lets-Talk {
+        position: absolute;
+        left: auto;
+        top: auto;
+        font-size: 70px;
+    }
+    .email-input {
+        position: absolute;
+        left: auto;
+        top: 360px;
+        width: 390px;
+        justify-content: center;
+    }
+
+    .submit-btn {
+        position: absolute;
+        left: auto;
+        top: 410px;
+        left: 100px;
+        size: 20px;
+        justify-self: center;
+
+    }
+
+    
+
+    /* FOOTER ------------------------------------------------------------------------------ FOOTER */
+    footer p {
+        font-size: 12px; /* Smaller footer text */
+    }
+}
+    
